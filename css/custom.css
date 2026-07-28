@@ -33,3 +33,110 @@
   opacity: 0.8;
 }
 
+
+
+
+
+
+
+
+
+
+/* =========== Banner 覆盖与渐变 =========== */
+.index-banner {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* 半透明渐变覆盖，保证文字可读 */
+.index-banner::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  background: linear-gradient(180deg, rgba(10,10,20,0.25) 0%, rgba(10,10,20,0.45) 60%);
+  pointer-events: none;
+}
+
+/* Banner 标题样式 */
+#index-banner .banner-inner {
+  position: relative;
+  padding: 48px 28px;
+  color: #fff;
+  text-align: left;
+}
+#index-banner .banner-inner .site-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+#index-banner .banner-inner .site-subtitle {
+  margin-top: 6px;
+  font-size: 1.05rem;
+  opacity: 0.92;
+}
+
+/* =========== 卡片样式（首页文章） =========== */
+.card-list .post-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(8,12,20,0.08);
+  transition: transform 220ms cubic-bezier(.2,.8,.2,1), box-shadow 220ms;
+}
+.card-list .post-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 36px rgba(8,12,20,0.12);
+}
+
+/* 封面图片适配：固定高度，裁剪并居中 */
+.post-card .card-cover img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+}
+
+/* 卡片内文：标题与摘要 */
+.post-card .card-body .post-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.post-card .card-body .excerpt {
+  color: rgba(0,0,0,0.7);
+  font-size: 0.95rem;
+}
+
+/* =========== 分类区块（简洁色块） =========== */
+.index-categories {
+  display: flex;
+  gap: 12px;
+  margin: 18px 0 28px;
+  flex-wrap: wrap;
+}
+.index-categories .cat {
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  background: linear-gradient(90deg, rgba(255,255,255,0.9), rgba(255,255,255,0.6));
+  box-shadow: 0 6px 18px rgba(8,12,20,0.04);
+  cursor: pointer;
+}
+
+/* 响应式微调 */
+@media (max-width: 768px) {
+  #index-banner .banner-inner { padding: 28px 16px; }
+  .post-card .card-cover img { height: 140px; }
+}
+
+
+
+
+
+
+
+
+
+
